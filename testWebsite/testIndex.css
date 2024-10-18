@@ -1,0 +1,128 @@
+/* <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Utrzymania Uwagi</title>
+    <link rel="stylesheet" href="testIndex.css">
+    <script src="testIndex.js" defer></script>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main>
+        <div id="powitanie">
+            <h1>Witamy w teście na utrzymanie uwagi!</h1>
+            <p>Wyświelanych będzie pięć kół w różnych kolorach. Twoim zadaniem jest naciśnąć przycisk spacji, jeśli jedno z nich będzie w kolorze <strong>czerwonym</strong>.</p>
+            <p>Przed rozpoczęciem badania upewnij się, że jesteś w stanie skupić się na ekranie przez około 5 minut.</p>
+            <p>Wciśnij przycisk poniżej, aby przejść do fazy treningu.</p>
+            <button id="startButton">Rozpocznij badanie</button>
+        </div>
+        <div id="badanie" style="display: none">
+            <div id="circles">
+                
+            </div>
+            <div id="trainingFeedback"></div>
+        </div>
+        <div id="koniec" style="display: none">
+            <h1>Gratulacje!</h1>
+            <p>Ukończyłeś test na utrzymanie uwagi.</p>
+            <p>Twój wynik to: <br><span id="result"></span></p>
+            <p>Jeśli chcesz, możesz powtórzyć test, aby poprawić wynik.</p>
+            <button id="restartButton">Powtórz test</button>
+    </main>
+    <footer id="footer">
+        <p>Made by the team</p>
+    </footer>
+</body>
+</html> */
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adjust height as needed */
+    width: auto; /* Adjust width as needed */
+}
+
+#trainingFeedback {
+    margin-top: 80px;
+    text-align: center;
+    font: bold 24px Arial, sans-serif;
+}
+
+#powitanie {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#powitanie h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#powitanie p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#powitanie button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#powitanie button:hover {
+    background-color: #0056b3;
+}
+
+#koniec {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#koniec h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#koniec p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#koniec button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#koniec button:hover {
+    background-color: #0056b3;
+}

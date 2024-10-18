@@ -2,6 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     badanieElement = document.getElementById('badanie');
     powitanieElement = document.getElementById('powitanie');
     footerElement = document.getElementById('footer');
+    
+    maxTime = document.getElementById('numberInput');
+    let limitCzasu = 60;
+    if (maxTime.value == '') {
+        limitCzasu = 60;
+    }else{
+        limitCzasu = parseInt(maxTime.value);
+    }
 
     rozpocznijBadanieButton = document.getElementById('startButton');
     rozpocznijBadanieButton.addEventListener('click', function() {
@@ -21,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         badanieElement.style.display = 'block';
         const currentTimeInSeconds = Math.floor(Date.now() / 1000);
         console.log('Current Time in Seconds:', currentTimeInSeconds);
-        const endTimeInSeconds = currentTimeInSeconds + 60;
+        const endTimeInSeconds = currentTimeInSeconds + limitCzasu;
         let timesUp = false;
         async function checkTime() {
             const interval = setInterval(() => {
@@ -46,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            const isRedDisplayed = Math.random() >= 0.5;
+            const isRedDisplayed = Math.random() >= 0.50;
             const randomColors = []
             while (randomColors.length < 5){
                 const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -56,10 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             const circles = []
             if(isRedDisplayed){
-                circles.push('<div style="width: 100px; height: 100px; background-color: '+"red"+'; border-radius: 50%; display: inline-block; margin-left: 10px;"></div>');
+                circles.push('<div style="width: 15em; height: 15em; background-color: '+"red"+'; border-radius: 50%; display: inline-block; margin-left: 10px;"></div>');
             }
             while (circles.length < 5){
-                circles.push('<div style="width: 100px; height: 100px; background-color: '+randomColors[circles.length]+'; border-radius: 50%; display: inline-block; margin-left: 10px;"></div>');
+                circles.push('<div style="width: 15em; height: 15em; background-color: '+randomColors[circles.length]+'; border-radius: 50%; display: inline-block; margin-left: 10px;"></div>');
             }
             for (let i = circles.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -78,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (event.code === 'Space') {
                     document.removeEventListener('keydown', handleKeydown);
                     console.log('Spacebar pressed');
+                    spacePressed = true;
                     resolved = true;
                     const endTime = new Date();
                     const timeDeltaInSeconds = ((endTime - currentTime)/1000);

@@ -45,6 +45,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 #circles {
@@ -58,7 +59,7 @@ body {
 #trainingFeedback {
     margin-top: 80px;
     text-align: center;
-    font: bold 24px Arial, sans-serif;
+    font: bold 7em Arial, sans-serif;
 }
 
 #powitanie {
@@ -125,4 +126,19 @@ body {
 
 #koniec button:hover {
     background-color: #0056b3;
+}
+#footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+    background-color: #f1f1f1;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#footer p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
 }

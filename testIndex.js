@@ -5,15 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     maxTime = document.getElementById('numberInput');
     let limitCzasu = 60;
-    if (maxTime.value == '') {
-        limitCzasu = 60;
-    }else{
-        limitCzasu = parseInt(maxTime.value);
-    }
 
     rozpocznijBadanieButton = document.getElementById('startButton');
     rozpocznijBadanieButton.addEventListener('click', function() {
         console.log('rozpocznijBadanieButton clicked');
+        if (maxTime.value == '') {
+            console.log('maxTime.value is empty');
+            limitCzasu = 60;
+        }else{
+            limitCzasu = parseInt(maxTime.value);
+        }
         badanieRunner();
     });
     document.getElementById('restartButton').addEventListener('click', function() {

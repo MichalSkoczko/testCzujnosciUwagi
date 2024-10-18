@@ -39,13 +39,12 @@
 </html> */
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
     height: 100vh;
     margin: 0;
-    overflow: hidden;
+    width: 100%;
+    overflow-x: hidden;
+    
 }
 
 #circles {
@@ -113,7 +112,12 @@ body {
     font-size: 1.2em;
     margin-bottom: 15px;
 }
-
+#koniec span {
+    max-height: 50vh;
+    overflow-y: auto;
+    display: inline-block;
+    overflow-y: auto;
+}
 #koniec button {
     padding: 10px 20px;
     font-size: 1em;
@@ -133,12 +137,29 @@ body {
     border-top: 2px solid #ccc;
     background-color: #f1f1f1;
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
+    max-height: 5vh;
+    height: 5vh;
+
+}
+
+main {
+    max-height: 95vh;
+    height: 95vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    
 }
 
 #footer p {
     margin: 0;
+    
     font-size: 1em;
     color: #333;
 }
